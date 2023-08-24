@@ -23,7 +23,6 @@ public class PlayerMove : MonoBehaviour
 
     //Vector3 targetPosition = new Vector3(0, 0, 0);
 
-
     //Rigidbody rd;
 
     public Vector3 movingVelocity;
@@ -101,10 +100,6 @@ public class PlayerMove : MonoBehaviour
             //Foodcs foodcs = NearFood.GetComponent<Foodcs>();　ここは解除したい
             //foodcs.FoodMove(0f);　ここは解除したい
             NearFood.transform.parent = null;
-
-
-
-
         }
 
         // Wキー（前方移動）
