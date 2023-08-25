@@ -34,8 +34,8 @@ public class RequestIngredients : MonoBehaviour
     {
         RaycastHit[] hits = Physics.SphereCastAll(
               transform.position,
-              7.0f,
-              Vector3.right);
+              3.0f,
+              Vector3.forward);
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
@@ -71,5 +71,10 @@ public class RequestIngredients : MonoBehaviour
         }
         else
             Debug.Log("FALSE");
+
+        lcnt = 0;   //lcntの初期化
+        mcnt = 0;   //mcntの初期化
+        ccnt = 0;   //ccntの初期化
+        tcnt = 0;   //tcntの初期化
     }
 }
