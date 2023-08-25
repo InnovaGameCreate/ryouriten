@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*毒入りTomatoに弱い客の、①要求を満たしているか
+                         ②killできるかの判定*/
+
 public class RequestIngredients : MonoBehaviour
 {
     [SerializeField] private float Lcount;
@@ -34,14 +37,14 @@ public class RequestIngredients : MonoBehaviour
     {
         RaycastHit[] hits = Physics.SphereCastAll(
               transform.position,
-              3.0f,
+              5.0f,
               Vector3.forward);
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
         foreach (var hit in hits)
         {
-            //Debug.Log($"検出されたオブジェクト:{hit.collider.name}");
+            Debug.Log($"検出されたオブジェクト:{hit.collider.name}");
 
             if (hit.collider.tag == "Lettuce")
                 lcnt++;
@@ -64,7 +67,7 @@ public class RequestIngredients : MonoBehaviour
             Debug.Log("REQUEST CLEAR!");
             foreach (var hit in hits)
             {
-                if (hit.collider.name == "Meets.P") //この人の弱点毒であったら
+                if (hit.collider.name == "Tomato.P") //この人の弱点毒であったら
                     killcount1 += 1;
                 Debug.Log($"Kill:{killcount1}");
             }
