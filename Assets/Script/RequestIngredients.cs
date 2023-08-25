@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Requestingridients : MonoBehaviour
+public class RequestIngredients : MonoBehaviour
 {
     [SerializeField] private float Lcount;
     [SerializeField] private float Mcount;
@@ -13,10 +14,20 @@ public class Requestingridients : MonoBehaviour
     int mcnt = 0;
     int ccnt = 0;
     int tcnt = 0;
+
+    public int killcount1 = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        Discrimination();
+        
+    }
+
+        // Update is called once per frame
+        void Update()
+    {
+        if(Input.GetKey(KeyCode.Space))
+            Discrimination();
     }
 
     void Discrimination()
@@ -54,15 +65,11 @@ public class Requestingridients : MonoBehaviour
             foreach (var hit in hits)
             {
                 if (hit.collider.name == "Meets.P") //Ç±ÇÃêlÇÃé„ì_ì≈Ç≈Ç†Ç¡ÇΩÇÁ
-                    Destroy(this.gameObject);
+                    killcount1 += 1;
+                Debug.Log($"Kill:{killcount1}");
             }
         }
         else
             Debug.Log("FALSE");
-    }
-        // Update is called once per frame
-        void Update()
-    {
-        
     }
 }
