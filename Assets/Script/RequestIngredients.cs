@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*“Å“ü‚èTomato‚Éã‚¢‹q‚ÌA‡@—v‹‚ğ–‚½‚µ‚Ä‚¢‚é‚©
+/*‹q‚ÌA‡@—v‹‚ğ–‚½‚µ‚Ä‚¢‚é‚©
                          ‡Akill‚Å‚«‚é‚©‚Ì”»’è*/
 
 public class RequestIngredients : MonoBehaviour
 {
-    [SerializeField] private float Lcount;
-    [SerializeField] private float Mcount;
-    [SerializeField] private float Ccount;
-    [SerializeField] private float Tcount;
+    [SerializeField] private float Lcount1 = 1;
+    [SerializeField] private float Mcount1 = 0;
+    [SerializeField] private float Ccount1 = 0;
+    [SerializeField] private float Tcount1 = 1;
 
     private float Lcount2 = 0;
     private float Mcount2 = 1;
@@ -112,7 +112,7 @@ public class RequestIngredients : MonoBehaviour
         Debug.Log($"CheeseF{ccnt}");
         Debug.Log($"TomatoF{tcnt}");
 
-        if (Lcount == lcnt && Mcount == mcnt && Ccount == ccnt && Tcount == tcnt)
+        if (Lcount1 == lcnt && Mcount1 == mcnt && Ccount1 == ccnt && Tcount1 == tcnt)
         {
             Debug.Log("REQUEST CLEAR!");
             foreach (var hit in hits)
