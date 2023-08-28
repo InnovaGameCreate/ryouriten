@@ -40,7 +40,8 @@ public class RequestIngredients : MonoBehaviour
     int num;
 
     public int killcount1 = 0;
-    public int abc = 0;    //Killできたら次のオーダーにするためのと、毒か客の要望を満たしていないかをUIで知らせるための変数
+    public int abc = 0;    //毒か客の要望を満たしていないかをUIで知らせるための変数
+    public int trriger = 0; //Killできたら次のオーダーにするための変数
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +57,9 @@ public class RequestIngredients : MonoBehaviour
         random = a.GetComponent<Random>();  //ついているスクリプトを取得
         num = random.rnd;
 
-        if (num == 1) //もしスペースキーが押されたら
+        if (num == 1) 
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))    //もしスペースキーが押されたら
                 Discrimination1();
         }
         else if (num == 2)
@@ -122,21 +123,23 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
+                    trriger = 1;
                 }
-                else
-                    abc = 2;
+                else if (abc != 1)
+                    abc = 3;
             }
         }
         else
         {
-            Debug.Log("FALSE");
-            abc = 3;
+            Debug.Log("お客様の要求を満たしていません");
+            abc = 2;
         }
 
         lcnt = 0;   //lcntの初期化
         mcnt = 0;   //mcntの初期化
         ccnt = 0;   //ccntの初期化
         tcnt = 0;   //tcntの初期化
+        trriger = 0;
     }
     void Discrimination2()
     {
@@ -178,23 +181,23 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
+                    trriger += 1;
                 }
-
-                else
-                    abc = 2;
+                else if (abc != 1)
+                    abc = 3;
             }
         }
         else
         {
             Debug.Log("お客様の要求を満たしていません。");
-            abc = 3;
+            abc = 2;
         }
 
         lcnt = 0;
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        //abc = 0;
+        
     }
 
     void Discrimination3()
@@ -237,22 +240,23 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
+                    trriger = 1;
                 }
-                else
-                    abc = 2;
+                else if (abc != 1)
+                    abc = 3;
             }
         }
         else
         {
             Debug.Log("お客様の要求を満たしていません。");
-            abc = 3;
+            abc = 2;
         }
 
         lcnt = 0;
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        //abc = 0;
+        trriger = 0;
     }
 
     void Discrimination4()
@@ -295,20 +299,22 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
+                    trriger = 1;
                 }
-                else
-                    abc = 2;
+                else if (abc != 1)
+                    abc = 3;
             }
         }
         else
         {
             Debug.Log("お客様の要求を満たしていません。");
-            abc = 3;
+            abc = 2;
         }
         lcnt = 0;
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
+        trriger = 0;
     }
 
     void Discrimination5()
@@ -351,19 +357,21 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
+                    trriger = 1;
                 }
-                else
-                    abc = 2;
+                else if (abc != 1)
+                    abc = 3;
             }
         }
         else
         {
             Debug.Log("お客様の要求を満たしていません。");
-            abc = 3;
+            abc = 2;
         }
         lcnt = 0;
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
+        trriger = 0;
     }
 }
