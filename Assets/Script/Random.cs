@@ -25,7 +25,7 @@ public class Random : MonoBehaviour
 
         seconds += Time.deltaTime;
 
-        if (seconds >= 5 || TRRIGER == 1)
+        if (seconds >= 30 || TRRIGER == 1)
         {
             rnd = UnityEngine.Random.Range(1, 6); //•Ï”rnd‚É‚P`5‚Ü‚Å‚Ì®”‚ğƒ‰ƒ“ƒ_ƒ€‚É‘ã“ü
             seconds = 0;
