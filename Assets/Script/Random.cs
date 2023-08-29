@@ -7,6 +7,7 @@ public class Random : MonoBehaviour
     public float seconds = 0;
     public int rnd = 0;
     int TRRIGER;
+    public int a = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class Random : MonoBehaviour
         RequestIngredients requestingredients;
         GameObject obj = GameObject.Find("Guest1"); //Guest1というオブジェクトを探す
         requestingredients = obj.GetComponent<RequestIngredients>();
-        TRRIGER = requestingredients.trriger;
+        TRRIGER = requestingredients.trriger2;
 
         seconds += Time.deltaTime;
 
@@ -29,6 +30,8 @@ public class Random : MonoBehaviour
             rnd = UnityEngine.Random.Range(1, 6); //変数rndに１～5までの整数をランダムに代入
             seconds = 0;
             //Debug.Log("10秒後に実行された");
+            a = 0;
         }
+        
     }
 }

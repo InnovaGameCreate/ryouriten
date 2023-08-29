@@ -8,10 +8,13 @@ using UnityEngine.UI;
 
 public class RequestIngredients : MonoBehaviour
 {
-    [SerializeField] private float Lcount1 = 1;
-    [SerializeField] private float Mcount1 = 0;
-    [SerializeField] private float Ccount1 = 0;
-    [SerializeField] private float Tcount1 = 1;
+    private int trriger1 = 0;
+    public int trriger2 = 0; //Killできたら次のオーダーにするための変数
+
+    private float Lcount1 = 1;
+    private float Mcount1 = 0;
+    private float Ccount1 = 0;
+    private float Tcount1 = 1;
 
     private float Lcount2 = 0;
     private float Mcount2 = 1;
@@ -41,7 +44,6 @@ public class RequestIngredients : MonoBehaviour
 
     public int killcount1 = 0;
     public int abc = 0;    //毒か客の要望を満たしていないかをUIで知らせるための変数
-    public int trriger = 0; //Killできたら次のオーダーにするための変数
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +84,14 @@ public class RequestIngredients : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                 Discrimination5();
         }
+
+        if (trriger1 == 1)
+        {
+            trriger2 = 1;
+            trriger1 = 0;
+        }
+        else if (trriger1 == 0)
+            trriger2 = 0;
     }
 
     void Discrimination1()
@@ -123,7 +133,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger = 1;
+                    trriger1 = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -139,8 +149,6 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;   //mcntの初期化
         ccnt = 0;   //ccntの初期化
         tcnt = 0;   //tcntの初期化
-        if(num != 1)
-        trriger = 0;
     }
     void Discrimination2()
     {
@@ -182,7 +190,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger = 1;
+                    trriger1 = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -240,7 +248,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger = 1;
+                    trriger1 = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -256,7 +264,6 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        trriger = 0;
     }
 
     void Discrimination4()
@@ -299,7 +306,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger = 1;
+                    trriger1 = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -314,7 +321,6 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        trriger = 0;
     }
 
     void Discrimination5()
@@ -357,7 +363,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger = 1;
+                    trriger1 = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -372,6 +378,5 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        trriger = 0;
     }
 }
