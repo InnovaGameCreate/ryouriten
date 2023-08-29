@@ -30,9 +30,5 @@ public class Random : MonoBehaviour
             seconds = 0;
             //Debug.Log("10•bŒã‚ÉŽÀs‚³‚ê‚½");
         }
-
-        if (TRRIGER >= 1)
-            TRRIGER = 0;
-        
     }
 }
