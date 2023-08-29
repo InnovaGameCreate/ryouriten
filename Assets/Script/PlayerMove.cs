@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     //Rigidbody型のrbという変数を作る
     private Rigidbody rb;
 
+<<<<<<< Updated upstream
 
     // [SerializeField] private Foodcs _foodcs;
 
@@ -33,6 +34,52 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         Targets = GameObject.FindGameObjectsWithTag("Food");
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
+        //食材をTargetsに入れる
+        UpBuns = GameObject.FindGameObjectsWithTag("UpBuns");
+        UdBuns = GameObject.FindGameObjectsWithTag("UdBuns");
+        Cheese = GameObject.FindGameObjectsWithTag("Cheese");
+        Tomato = GameObject.FindGameObjectsWithTag("Tomato");
+        Meets = GameObject.FindGameObjectsWithTag("Meets");
+        Lettuce = GameObject.FindGameObjectsWithTag("Lettuce");
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = UpBuns[i];
+            j++;
+        }
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = UdBuns[i];
+            j++;
+        }
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = Cheese[i];
+            j++;
+        }
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = Tomato[i];
+            j++;
+        }
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = Meets[i];
+            j++;
+        }
+        for (int i = 0; FoodNumber > i; i++)
+        {
+            Targets[j] = Lettuce[i];
+            j++;
+        }
+
+        data = GameObject.Find("Data"); //ヒエラルキーにあるDataをdataに代入;
+        dataCs = data.GetComponent<Data>(); //data(ヒエラルキーにあるData)の中からスクリプトのDataを取得
+
+>>>>>>> Stashed changes
         angle = this.gameObject.transform.localEulerAngles;
         rb = GetComponent<Rigidbody>();
         //rbz = GetComponent<Rigidbody>();
@@ -43,23 +90,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //カメラ移動　縦は今のところナシ
         angle.y += Input.GetAxis("Mouse X") * CameraSpeed;
-
         //angle.x -= Input.GetAxis("Mouse Y") * CameraSpeed;
-
         this.gameObject.transform.localEulerAngles = angle;
-
-        // Move.x += Input.GetKey(KeyCode.W) * MoveSpeed;
-        //Move.x -= Input.GetKey(KeyCode.S) * MoveSpeed;
-        //Move.z += Input.GetKey(KeyCode.A) * MoveSpeed;
-        //Move.z -= Input.GetKey(KeyCode.D) * MoveSpeed;
-        //rb.velocity = new vector3();
-
-        //if (Input.GetKey(KeyCode.W))
-        //rb.AddForce(transform.forward * MoveSpeed, ForceMode.Acceleration);   
-        //transform.Translate(new Vector3(0, 0, MoveSpeed) * Time.deltaTime);
-
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -80,12 +114,17 @@ public class PlayerMove : MonoBehaviour
                     NearFood = t;
                     //NearFood.transform.localPosition = new Vector3(3, 0, 0);
 
+<<<<<<< Updated upstream
                 }
 
 
             }
             //rd.useGravity = false;
             //NearFood.rb.useGravity = false;
+=======
+            FoodMove fooodMove = NearFood.GetComponent<FoodMove>();
+            fooodMove.FoodGof();
+>>>>>>> Stashed changes
             NearFood.transform.parent = this.gameObject.transform;
             NearFood.transform.position = transform.position + transform.forward * d + transform.up * 3;
 
@@ -129,12 +168,6 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= MoveSpeed * transform.right * Time.deltaTime;
-        }
-
-
-        if (Input.GetKey(KeyCode.L))
-        {
-
         }
     }
 
