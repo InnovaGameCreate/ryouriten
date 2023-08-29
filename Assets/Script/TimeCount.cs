@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeCount : MonoBehaviour
@@ -19,10 +20,13 @@ public class TimeCount : MonoBehaviour
     {
         seconds += Time.deltaTime;
 
-        if(seconds <= 180)
+        if(seconds <= 10)
             TimeText.text = "Žc‚èŽžŠÔF" + (180f - seconds);
-        else if (seconds >= 180)
+        else if (seconds >= 10)
             TimeText.text = "TIME UP!!";
+
+        if (seconds >= 13)
+            SceneManager.LoadScene("End");
         
     }
 }
