@@ -19,7 +19,7 @@ public class BGM : MonoBehaviour
     {
         seconds += Time.deltaTime;
 
-        if (seconds >= 12)
+        if (seconds >= 120)
         {
             audioSource.Stop();
         }
