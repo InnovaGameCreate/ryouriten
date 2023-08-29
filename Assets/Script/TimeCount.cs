@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeCount : MonoBehaviour
 {
     [SerializeField] private Text TimeText;
+    float seconds = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,12 @@ public class TimeCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeText.text = "残り時間：" + (180f - Time.time);
+        seconds += Time.deltaTime;
+
+        if(seconds <= 180)
+            TimeText.text = "残り時間：" + (180f - seconds);
+        else if (seconds >= 180)
+            TimeText.text = "TIME UP!!";
+        
     }
 }
