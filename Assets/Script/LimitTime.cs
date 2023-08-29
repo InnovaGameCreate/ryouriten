@@ -21,7 +21,7 @@ public class LimitTime : MonoBehaviour
         random = b.GetComponent<Random>();  //ついているスクリプトを取得
         snd = random.seconds;
 
-        LimitText.text = "オーダーの変更まで：" + (5.0 + 1.0 - snd);
+        LimitText.text = "オーダーの変更まで：" + (30.0 + 1.0 - snd);
 
     }
 }

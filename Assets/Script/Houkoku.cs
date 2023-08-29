@@ -7,7 +7,7 @@ public class Houkoku : MonoBehaviour
 {
     int ABC;
     public Text DentatuText;
-    //public float seconds = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +22,16 @@ public class Houkoku : MonoBehaviour
         requestingredients = obj.GetComponent<RequestIngredients>();    //オブジェクト「Guest1」内のスクリプトを取得
         ABC = requestingredients.abc;   //変数ABCに上で取得したスクリプト内の変数を代入する
 
+
         if (ABC == 0)
             DentatuText.text = "客の外見で苦手な毒が分かったらいいのになぁ";
         else if (ABC == 1)
         {
-            DentatuText.text = "仕留めたっ！";    
+            DentatuText.text = "仕留めたっ！";
         }
         else if (ABC == 2)
         {
-            DentatuText.text = "オーダー通りの食材を使わなくちゃ";
+            DentatuText.text = "オーダー通りの食材じゃなかったみたい";
             //ABC = 0;
         }
         else if (ABC == 3)
@@ -39,4 +40,5 @@ public class Houkoku : MonoBehaviour
             //ABC = 0;
         }
     }
+
 }
