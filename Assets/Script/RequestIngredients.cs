@@ -41,6 +41,7 @@ public class RequestIngredients : MonoBehaviour
     int ccnt = 0;
     int tcnt = 0;
     int num;
+    float num2;
 
     public int killcount1 = 0;
     public int abc = 0;    //毒か客の要望を満たしていないかをUIで知らせるための変数
@@ -54,34 +55,39 @@ public class RequestIngredients : MonoBehaviour
         // Update is called once per frame
         void Update()
     {
-        Random random;  //呼ぶスクリプトにrandpmというあだ名をつける
+        Random random;  //呼ぶスクリプトにrandomというあだ名をつける
         GameObject a = GameObject.Find("Random");   //Randomというオブジェクトを探す
         random = a.GetComponent<Random>();  //ついているスクリプトを取得
         num = random.rnd;
 
+        Data data;  //呼ぶスクリプトにdataというあだ名をつける
+        GameObject b = GameObject.Find("Data"); //Dataというオブジェクトを探す
+        data = b.GetComponent<Data>();  // ついているスクリプトを取得
+        num2 = data.vanish;
+
         if (num == 1) 
         {
-            if (Input.GetKeyDown(KeyCode.Space))    //もしスペースキーが押されたら
+            if (num2 == 1)    //もしスペースキーが押されたら
                 Discrimination1();
         }
         else if (num == 2)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (num2 == 1)
                 Discrimination2();
         }
         else if (num == 3)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (num2 == 1)
                 Discrimination3();
         }
         else if (num == 4)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (num2 == 1)
                 Discrimination4();
         }
         else if (num == 5)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (num2 == 1)
                 Discrimination5();
         }
 
