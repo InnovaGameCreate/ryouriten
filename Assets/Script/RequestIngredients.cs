@@ -139,6 +139,7 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;   //mcnt‚Ì‰Šú‰»
         ccnt = 0;   //ccnt‚Ì‰Šú‰»
         tcnt = 0;   //tcnt‚Ì‰Šú‰»
+        if(num != 1)
         trriger = 0;
     }
     void Discrimination2()
@@ -181,7 +182,7 @@ public class RequestIngredients : MonoBehaviour
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
                     abc = 1;
-                    trriger += 1;
+                    trriger = 1;
                 }
                 else if (abc != 1)
                     abc = 3;
@@ -197,7 +198,6 @@ public class RequestIngredients : MonoBehaviour
         mcnt = 0;
         ccnt = 0;
         tcnt = 0;
-        
     }
 
     void Discrimination3()
