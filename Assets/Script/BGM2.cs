@@ -18,11 +18,11 @@ public class BGM2 : MonoBehaviour
     {
         seconds += Time.deltaTime;
 
-        if (seconds <= 12)
+        if (seconds <= 120)
         {
             audioSource.Pause();
         }
-        else if (seconds >= 12.1)
+        else if (seconds >= 120.1)
             audioSource.UnPause();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Random : MonoBehaviour
 {
-    float seconds = 0;
+    public float seconds = 0;
     public int rnd = 0;
     int TRRIGER;
 
