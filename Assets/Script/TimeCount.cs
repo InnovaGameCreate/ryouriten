@@ -20,12 +20,12 @@ public class TimeCount : MonoBehaviour
     {
         seconds += Time.deltaTime;
 
-        if(seconds <= 10)
+        if(seconds <= 180)
             TimeText.text = "Žc‚èŽžŠÔF" + (180f - seconds);
-        else if (seconds >= 10)
+        else if (seconds >= 180)
             TimeText.text = "TIME UP!!";
 
-        if (seconds >= 13)
+        if (seconds >= 183)
             SceneManager.LoadScene("End");
         
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class SE : MonoBehaviour
 {
     public AudioClip sound1;
+    public AudioClip sound2;
+    public AudioClip sound3;
     AudioSource audioSource;
 
     float seconds = 0;
@@ -26,5 +28,11 @@ public class SE : MonoBehaviour
             //‰¹(sound1)‚ð–Â‚ç‚·
             audioSource.PlayOneShot(sound1);
         }
+
+        if (seconds >= 120.0 && seconds <= 120.1)
+            audioSource.PlayOneShot(sound2);
+
+        if (seconds >= 180.0 && seconds <= 180.1)
+            audioSource.PlayOneShot(sound3);
     }
 }
