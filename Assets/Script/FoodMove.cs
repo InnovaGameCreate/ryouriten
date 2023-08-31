@@ -33,17 +33,17 @@ public class FoodMove : MonoBehaviour
             rb.useGravity = true;
             if (dataCs.vanish == 1)
             {
-                rb.useGravity = false;
-                this.transform.position = new Vector3(-100f, 0.3f, 5f);
+                // コルーチンの起動
+                StartCoroutine(DelayCoroutine());
             }
         }
     }
 
 
-    public void FoodGon()
+    private IEnumerator DelayCoroutine()
     {
-        //Rigidbody rb = GetComponent<Rigidbody>();
-        // rb.useGravity = true;
+        yield return new WaitForSeconds(1);
+        this.transform.position = new Vector3(-100f, 0.3f, 5f);
     }
 
 
@@ -51,26 +51,26 @@ public class FoodMove : MonoBehaviour
     {
 
         Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         rb.useGravity = false;
-
     }
 
     public void FoodChange(float guzai)
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (-13f < this.transform.position.x && this.transform.position.x < -8f && 3f < this.transform.position.z && this.transform.position.z < 8f)
+        if (-43f < this.transform.position.x && this.transform.position.x < -19f && -32f < this.transform.position.z && this.transform.position.z < -15f)
         {
             if (dataCs.layer == 1f)
             {
                 if (guzai == 0f)
                 {
-                    this.transform.position = new Vector3(-10f, 0.3f * dataCs.layer, 5f);
+                    this.transform.position = new Vector3(-35f, 12 + 0.3f * dataCs.layer, -27f);
+
                     dataCs.layer++;
                     dai = 1f;
                 }
                 else
                 {
-                    rb.useGravity = false;
                     this.transform.position = new Vector3(-100f, 0.3f, 5f);
                 }
             }
@@ -79,18 +79,17 @@ public class FoodMove : MonoBehaviour
             {
                 if (guzai == 0f)
                 {
-                    rb.useGravity = false;
                     this.transform.position = new Vector3(-100f, 0.3f, 5f);
                 }
                 else if (guzai == 2f)
                 {
-                    this.transform.position = new Vector3(-10f, 0.3f * dataCs.layer, 5f);
+                    this.transform.position = new Vector3(-35f, 12 + 0.3f * dataCs.layer, -27f);
                     dataCs.layer++;
                     dai = 1f;
                 }
                 else if (guzai == 1f)
                 {
-                    this.transform.position = new Vector3(-10f, 0.3f * dataCs.layer, 5f);
+                    this.transform.position = new Vector3(-35f, 12 + 0.3f * dataCs.layer, -27f);
                     dataCs.layer = 1f;
                     dai = 1f;
                     dataCs.vanish = 1;
@@ -102,6 +101,7 @@ public class FoodMove : MonoBehaviour
         else
         {
             rb.useGravity = true;
+            rb.isKinematic = false;
         }
 
 

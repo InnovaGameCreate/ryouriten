@@ -22,7 +22,7 @@ public class Data : MonoBehaviour
 
     private IEnumerator DelayCoroutine()
     {
-        // 0.1•bŠÔ‘Ò‚Â
+        // 1•bŠÔ‘Ò‚Â
         yield return new WaitForSeconds(1);
         vanish = 0;
     }
