@@ -93,17 +93,9 @@ public class PlayerMove : MonoBehaviour
 
         this.gameObject.transform.localEulerAngles = angle;
 
-        // Move.x += Input.GetKey(KeyCode.W) * MoveSpeed;
-        //Move.x -= Input.GetKey(KeyCode.S) * MoveSpeed;
-        //Move.z += Input.GetKey(KeyCode.A) * MoveSpeed;
-        //Move.z -= Input.GetKey(KeyCode.D) * MoveSpeed;
-        //rb.velocity = new vector3();
-
-        //if (Input.GetKey(KeyCode.W))
-        //rb.AddForce(transform.forward * MoveSpeed, ForceMode.Acceleration);   
-        //transform.Translate(new Vector3(0, 0, MoveSpeed) * Time.deltaTime);
-
-
+          //Ž€–S‘[’u
+          if (this.transform.position.y < -60 )
+            this.transform.position = new Vector3(-20f, 5f, -10f);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -131,13 +123,14 @@ public class PlayerMove : MonoBehaviour
             //rb.useGravity = false;
             //NearFood.rb.useGravity = false;
             NearFood.transform.parent = this.gameObject.transform;
-            NearFood.transform.position = transform.position + transform.forward * d + transform.up * 3;
+            NearFood.transform.position = transform.position + transform.forward * d + transform.up * 10;
 
         }
 
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+
             FoodMove fooodMove = NearFood.GetComponent<FoodMove>();
             if (NearFood.gameObject.CompareTag("UdBuns"))
                 fooodMove.FoodChange(0f);
