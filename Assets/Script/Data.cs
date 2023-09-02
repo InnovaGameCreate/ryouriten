@@ -15,16 +15,21 @@ public class Data : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vanish == 1)
-            StartCoroutine(DelayCoroutine());
+       // if (Input.GetKey(KeyCode.P))
+        {
+         //   vanish = 1;
+        }
+
+        //if (vanish == 1)
+          //  StartCoroutine(DelayCoroutine());
         // コルーチンの起動
     }
 
-    private IEnumerator DelayCoroutine()
-    {
+    //private IEnumerator DelayCoroutine()
+    
         // 1秒間待つ
-        yield return new WaitForSeconds(1);
-        vanish = 0;
-    }
+        //yield return new WaitForSeconds(1);
+        //vanish = 0;
+    
 
 }

@@ -65,30 +65,46 @@ public class RequestIngredients : MonoBehaviour
         data = b.GetComponent<Data>();  // ついているスクリプトを取得
         num2 = data.vanish;
 
-        if (num == 1) 
+        if (num == 1)
         {
-            if (num2 == 1)    //もしスペースキーが押されたら
+            if (num2 == 1)
+            {  //もしスペースキーが押されたら
                 Discrimination1();
+                data.vanish = 0;
+            }
+
         }
         else if (num == 2)
         {
             if (num2 == 1)
+            {
                 Discrimination2();
+                data.vanish = 0;
+            }
         }
         else if (num == 3)
         {
             if (num2 == 1)
+            {
                 Discrimination3();
+                data.vanish = 0;
+            }
         }
         else if (num == 4)
         {
             if (num2 == 1)
+            {
                 Discrimination4();
+                data.vanish = 0;
+            }
         }
         else if (num == 5)
         {
             if (num2 == 1)
+            {
                 Discrimination5();
+                data.vanish = 0;
+            }
         }
 
         if (trriger1 == 1)
@@ -102,10 +118,7 @@ public class RequestIngredients : MonoBehaviour
 
     void Discrimination1()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(
-              transform.position,
-              5.0f,
-              Vector3.forward);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position,Vector3.up);
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
@@ -158,10 +171,8 @@ public class RequestIngredients : MonoBehaviour
     }
     void Discrimination2()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(
-              transform.position,
-              7.0f,
-              Vector3.right);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.up);
+
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
@@ -216,10 +227,8 @@ public class RequestIngredients : MonoBehaviour
 
     void Discrimination3()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(
-              transform.position,
-              7.0f,
-              Vector3.right);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.up);
+
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
@@ -274,10 +283,8 @@ public class RequestIngredients : MonoBehaviour
 
     void Discrimination4()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(
-              transform.position,
-              7.0f,
-              Vector3.right);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.up);
+
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
@@ -331,10 +338,8 @@ public class RequestIngredients : MonoBehaviour
 
     void Discrimination5()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(
-              transform.position,
-              7.0f,
-              Vector3.right);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.up);
+
 
         Debug.Log($"検出されたコライダーの数：{hits.Length}");
 
