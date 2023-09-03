@@ -10,6 +10,8 @@ public class RequestIngredients : MonoBehaviour
 {
     private int trriger1 = 0;
     public int trriger2 = 0; //Killできたら次のオーダーにするための変数
+    
+    double pp = 0;
 
     private float Lcount1 = 1;
     private float Mcount1 = 0;
@@ -148,15 +150,28 @@ public class RequestIngredients : MonoBehaviour
             foreach (var hit in hits)
             {
                 if (hit.collider.name == "Lettuce.P") //この人の弱点毒であったら
-                {
-                    killcount1 += 1;
-                    Debug.Log($"Kill:{killcount1}");
-                    abc = 1;
-                    trriger1 = 1;
-                }
-                else if (abc != 1)
-                    abc = 3;
+                  pp++;
+               else if (hit.collider.name == "Meets.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Lettuce.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Cheese.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Tomato.P")
+                    pp += 0.5;
+
             }
+            if (pp >= 1)
+            {
+                killcount1 += 1;
+                Debug.Log($"Kill:{killcount1}");
+                abc = 1;
+                trriger1 = 1;
+            }
+            else if (abc != 1)
+                abc = 3;
+
+
         }
         else
         {
