@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     int FoodNumber = 4;
     int j = 0;
 
-    private GameObject[] Targets = new GameObject[24];
+    private GameObject[] Targets = new GameObject[26];
 
     //RigidbodyŒ^‚Ìrb‚Æ‚¢‚¤•Ï”‚ğì‚é
     private Rigidbody rb;
