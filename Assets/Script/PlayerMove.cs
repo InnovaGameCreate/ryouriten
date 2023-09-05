@@ -44,12 +44,12 @@ public class PlayerMove : MonoBehaviour
         Tomato = GameObject.FindGameObjectsWithTag("Tomato");
         Meets = GameObject.FindGameObjectsWithTag("Meets");
         Lettuce = GameObject.FindGameObjectsWithTag("Lettuce");
-        for (int i = 0; FoodNumber > i; i++)
+        for (int i = 0; 5 > i; i++)
         {
             Targets[j] = UpBuns[i];
             j++;
         }
-        for (int i = 0; FoodNumber > i; i++)
+        for (int i = 0; 5 > i; i++)
         {
             Targets[j] = UdBuns[i];
             j++;

@@ -11,7 +11,7 @@ public class RequestIngredients : MonoBehaviour
     private int trriger1 = 0;
     public int trriger2 = 0; //Killできたら次のオーダーにするための変数
     
-    double pp = 0;
+    double pp = 0; //毒殺できるかの変数
 
     private float Lcount1 = 1;
     private float Mcount1 = 0;
@@ -150,16 +150,17 @@ public class RequestIngredients : MonoBehaviour
             foreach (var hit in hits)
             {
                 if (hit.collider.name == "Lettuce.P") //この人の弱点毒であったら
-                  pp++;
-               else if (hit.collider.name == "Meets.P")
-                    pp += 0.5;
-                else if (hit.collider.name == "Lettuce.P")
+                  pp += 1;
+                else if (hit.collider.name == "Meets.P")
                     pp += 0.5;
                 else if (hit.collider.name == "Cheese.P")
                     pp += 0.5;
                 else if (hit.collider.name == "Tomato.P")
                     pp += 0.5;
-
+                else if (hit.collider.name == "UdBuns.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UpBuns.P")
+                    pp += 0.5;
             }
             if (pp >= 1)
             {
@@ -170,8 +171,8 @@ public class RequestIngredients : MonoBehaviour
             }
             else if (abc != 1)
                 abc = 3;
-
-
+            Debug.Log($"pp：{pp}");
+            pp = 0;
         }
         else
         {
@@ -217,7 +218,20 @@ public class RequestIngredients : MonoBehaviour
 
             foreach (var hit in hits)
             {
-                if (hit.collider.name == "Tomato.P") //この人の弱点毒であったら
+                    if (hit.collider.name == "Lettuce.P") 
+                        pp += 0.5;
+                    else if (hit.collider.name == "Meets.P")
+                        pp += 0.5;
+                    else if (hit.collider.name == "Cheese.P")
+                        pp += 0.5;
+                    else if (hit.collider.name == "Tomato.P") //この人の弱点毒であったら
+                    pp += 1;
+                    else if (hit.collider.name == "UdBuns.P")
+                        pp += 0.5;
+                    else if (hit.collider.name == "UpBuns.P")
+                        pp += 0.5;
+                }
+                if (pp >= 1)
                 {
                     killcount1 += 1;
                     Debug.Log($"Kill:{killcount1}");
@@ -226,7 +240,8 @@ public class RequestIngredients : MonoBehaviour
                 }
                 else if (abc != 1)
                     abc = 3;
-            }
+            Debug.Log($"pp：{pp}");
+            pp = 0;
         }
         else
         {
@@ -270,19 +285,32 @@ public class RequestIngredients : MonoBehaviour
         if (Lcount3 == lcnt && Mcount3 == mcnt && Ccount3 == ccnt && Tcount3 == tcnt)
         {
             Debug.Log("REQUEST CLEAR!");
-
             foreach (var hit in hits)
             {
-                if (hit.collider.name == "Meets.P") //この人の弱点毒であったら
-                {
-                    killcount1 += 1;
-                    Debug.Log($"Kill:{killcount1}");
-                    abc = 1;
-                    trriger1 = 1;
-                }
-                else if (abc != 1)
-                    abc = 3;
+                if (hit.collider.name == "Lettuce.P") 
+                    pp += 0.5;
+                else if (hit.collider.name == "Meets.P") //この人の弱点毒であったら
+                    pp += 1;
+                else if (hit.collider.name == "Cheese.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Tomato.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UdBuns.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UpBuns.P")
+                    pp += 0.5;
             }
+            if (pp >= 1)
+            {
+                killcount1 += 1;
+                Debug.Log($"Kill:{killcount1}");
+                abc = 1;
+                trriger1 = 1;
+            }
+            else if (abc != 1)
+                abc = 3;
+            Debug.Log($"pp：{pp}");
+            pp = 0;
         }
         else
         {
@@ -326,19 +354,32 @@ public class RequestIngredients : MonoBehaviour
         if (Lcount4 == lcnt && Mcount4 == mcnt && Ccount4 == ccnt && Tcount4 == tcnt)
         {
             Debug.Log("REQUEST CLEAR!");
-
             foreach (var hit in hits)
             {
-                if (hit.collider.name == "Cheese.P") //この人の弱点毒であったら
-                {
-                    killcount1 += 1;
-                    Debug.Log($"Kill:{killcount1}");
-                    abc = 1;
-                    trriger1 = 1;
-                }
-                else if (abc != 1)
-                    abc = 3;
+                if (hit.collider.name == "Lettuce.P") 
+                    pp += 0.5;
+                else if (hit.collider.name == "Meets.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Cheese.P") //この人の弱点毒であったら
+                    pp += 1;
+                else if (hit.collider.name == "Tomato.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UdBuns.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UpBuns.P")
+                    pp += 0.5;
             }
+            if (pp >= 1)
+            {
+                killcount1 += 1;
+                Debug.Log($"Kill:{killcount1}");
+                abc = 1;
+                trriger1 = 1;
+            }
+            else if (abc != 1)
+                abc = 3;
+            Debug.Log($"pp：{pp}");
+            pp = 0;
         }
         else
         {
@@ -381,19 +422,32 @@ public class RequestIngredients : MonoBehaviour
         if (Lcount5 == lcnt && Mcount5 == mcnt && Ccount5 == ccnt && Tcount5 == tcnt)
         {
             Debug.Log("REQUEST CLEAR!");
-
             foreach (var hit in hits)
             {
-                if (hit.collider.name == "Buns.P") //この人の弱点毒であったら
-                {
-                    killcount1 += 1;
-                    Debug.Log($"Kill:{killcount1}");
-                    abc = 1;
-                    trriger1 = 1;
-                }
-                else if (abc != 1)
-                    abc = 3;
+                if (hit.collider.name == "Lettuce.P") 
+                    pp += 0.5;
+                else if (hit.collider.name == "Meets.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Cheese.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "Tomato.P")
+                    pp += 0.5;
+                else if (hit.collider.name == "UdBuns.P") //この人の弱点毒であったら
+                    pp += 1;
+                else if (hit.collider.name == "UpBuns.P") //この人の弱点毒であったら
+                    pp += 1;
             }
+            if (pp >= 1)
+            {
+                killcount1 += 1;
+                Debug.Log($"Kill:{killcount1}");
+                abc = 1;
+                trriger1 = 1;
+            }
+            else if (abc != 1)
+                abc = 3;
+            Debug.Log($"pp：{pp}");
+            pp = 0;
         }
         else
         {

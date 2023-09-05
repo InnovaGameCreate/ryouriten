@@ -5,7 +5,7 @@ using UnityEngine;
 public class FoodMove : MonoBehaviour
 {
 
-    float dai = 0f;
+    [SerializeField] private float dai = 0f;
     private GameObject data;
     private Data dataCs;
     // Start is called before the first frame update
