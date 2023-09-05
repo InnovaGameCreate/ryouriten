@@ -37,6 +37,11 @@ public class FoodMove : MonoBehaviour
                 StartCoroutine(DelayCoroutine());
             }
         }
+
+        if (dai == 1 && dataCs.erase == 1)
+            StartCoroutine(DelayCoroutine());
+
+
     }
 
 

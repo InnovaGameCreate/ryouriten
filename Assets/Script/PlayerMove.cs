@@ -23,10 +23,10 @@ public class PlayerMove : MonoBehaviour
     private GameObject NearFood;
 
     [SerializeField] private float d;
-    int FoodNumber = 4;
+    int FoodNumber = 8;
     int j = 0;
 
-    private GameObject[] Targets = new GameObject[26];
+    private GameObject[] Targets = new GameObject[46];
 
     //RigidbodyŒ^‚Ìrb‚Æ‚¢‚¤•Ï”‚ðì‚é
     private Rigidbody rb;
@@ -44,12 +44,12 @@ public class PlayerMove : MonoBehaviour
         Tomato = GameObject.FindGameObjectsWithTag("Tomato");
         Meets = GameObject.FindGameObjectsWithTag("Meets");
         Lettuce = GameObject.FindGameObjectsWithTag("Lettuce");
-        for (int i = 0; 5 > i; i++)
+        for (int i = 0; 7 > i; i++)
         {
             Targets[j] = UpBuns[i];
             j++;
         }
-        for (int i = 0; 5 > i; i++)
+        for (int i = 0; 7 > i; i++)
         {
             Targets[j] = UdBuns[i];
             j++;

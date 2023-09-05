@@ -73,6 +73,7 @@ public class RequestIngredients : MonoBehaviour
             {  //もしスペースキーが押されたら
                 Discrimination1();
                 data.vanish = 0;
+                data.erase = 1;
             }
 
         }
@@ -82,6 +83,7 @@ public class RequestIngredients : MonoBehaviour
             {
                 Discrimination2();
                 data.vanish = 0;
+                data.erase = 1;
             }
         }
         else if (num == 3)
@@ -90,6 +92,7 @@ public class RequestIngredients : MonoBehaviour
             {
                 Discrimination3();
                 data.vanish = 0;
+                data.erase = 1;
             }
         }
         else if (num == 4)
@@ -98,6 +101,7 @@ public class RequestIngredients : MonoBehaviour
             {
                 Discrimination4();
                 data.vanish = 0;
+                data.erase = 1;
             }
         }
         else if (num == 5)
@@ -106,6 +110,7 @@ public class RequestIngredients : MonoBehaviour
             {
                 Discrimination5();
                 data.vanish = 0;
+                data.erase = 1;
             }
         }
 

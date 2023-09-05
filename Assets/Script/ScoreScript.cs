@@ -7,11 +7,14 @@ public class ScoreScript : MonoBehaviour
 {
     public  static int Score;  //得点の変数
     public Text ScoreText;  //得点の文字の変数
+    private GameObject data;
+    private Data dataCs;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        data = GameObject.Find("Data"); //ヒエラルキーにあるDataをdataに代入;
+        dataCs = data.GetComponent<Data>(); //data(ヒエラルキーにあるData)の中からスクリプトのDataを取得
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class ScoreScript : MonoBehaviour
     {
         ScoreText.text = "Kill:" + Score.ToString();    //ScoreTextの文字をScore:Scoreの値にする
 
-        if (Input.GetKey(KeyCode.Space))    //もしSpaceキーが押されたら
+        if (dataCs.erase == 1)    //もし
         {
             RequestIngredients requestingredients;
             GameObject obj = GameObject.Find("Guest1");
